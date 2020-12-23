@@ -1,0 +1,9 @@
+version: '2'
+services:
+  chat-app:
+    image: charit-docker-assignment
+    build: .
+    ports:
+      - '${PORT}:${PORT}'
+    restart: always
+    env_file: .env.prod

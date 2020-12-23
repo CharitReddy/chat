@@ -1,0 +1,16 @@
+version: '2'
+services:
+  chat-app:
+    container_name: docker-assignment
+    image: charit-docker-assignment
+    build:
+      context: .
+
+    volumes:
+      - /usr/app
+      - /usr/app/node_modules
+    ports:
+      - '${PORT}:${PORT}'
+    env_file: .env
+    environment:
+      - CHOKIDAR_USEPOLLING=true
